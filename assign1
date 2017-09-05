@@ -1,0 +1,37 @@
+var r, g, b;
+
+function setup() { 
+	
+  createCanvas(400, 400);
+	
+	r = random(255);
+  g = random(255);
+  b = random(255);
+	
+  fill(80, 501, 92, 57);  
+	translate(200,200);
+	noStroke();
+	for (var i = 0; i < 10; i ++) {
+		ellipse(40, 50, 20, 80);
+		rotate(PI/5);
+	}
+}
+	
+function draw() {
+	 
+  strokeWeight(2);
+  stroke(r, g, b);
+  fill(r, g, b, 127);
+  ellipse(200, 200, 80, 80);
+}
+
+function mousePressed() {
+  
+  var d = dist(mouseX, mouseY, 200, 200);
+  if (d < 100) {
+   
+    r = random(255);
+    g = random(255);
+    b = random(255);
+  }
+}
